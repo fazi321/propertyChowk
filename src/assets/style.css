@@ -1,0 +1,403 @@
+/* @import url("http://fonts.cdnfonts.com/css/myriad-pro"); */
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("//db.onlinewebfonts.com/t/a89cf050c859a23e4b6d9cf5989acf9e.eot");
+  src: url("//db.onlinewebfonts.com/t/a89cf050c859a23e4b6d9cf5989acf9e.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/a89cf050c859a23e4b6d9cf5989acf9e.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/a89cf050c859a23e4b6d9cf5989acf9e.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/a89cf050c859a23e4b6d9cf5989acf9e.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/a89cf050c859a23e4b6d9cf5989acf9e.svg#Myriad Pro") format("svg");
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+body {
+  line-height: 1;
+  font-family: "Myriad Pro", sans-serif;
+  font-weight: 300;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* common css */
+/* about privacy and terms css  */
+.content-container {
+  padding: 25px;
+  box-shadow: 0px 0px 10px #00000012;
+  margin: 40px 0 50px 0;
+}
+
+.content-container .block:nth-child(1) {
+  margin: 0;
+}
+
+.content-container .block {
+  margin-top: 10px;
+}
+
+.content-container .block h3 {
+  color: #0cb2da;
+  font-size: 20px;
+  text-align: left;
+  padding-top: 10px;
+}
+
+.content-container .block p {
+  color: #000000;
+  font-size: 16px;
+  text-align: left;
+  line-height: 1.5;
+  padding: 20px 0;
+}
+
+/* about privacy and terms css  */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+label {
+  color: #b1b0b0;
+  font-size: 14px;
+}
+
+.btn {
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+.btn-blue {
+  background-color: #0cb2da;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.overview-container {
+  padding: 20px 20px 0 20px;
+}
+
+.carousel-container {
+  max-width: 1166px;
+  margin: 0px auto;
+}
+
+.main-title {
+  width: 100%;
+  padding: 50px 0;
+}
+
+.main-title h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #231f20;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  text-align: center;
+}
+
+.carousel__prev,
+.carousel__next {
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 40px;
+  height: 40px;
+}
+
+.carousel__icon {
+  fill: #000;
+}
+
+.carousel__prev {
+  left: -25px;
+}
+
+.carousel__next {
+  right: -25px;
+}
+
+.carousel__slide {
+  padding: 0 20px;
+}
+
+/* .carousel__slide img {
+	width: 100%;
+  } */
+.carousel__slide>.carousel__item {
+  transform: scale(1);
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.carousel__slide--visible>.carousel__item {
+  opacity: 1;
+  transform: rotateY(0);
+}
+
+.carousel__slide--next>.carousel__item {
+  transform: scale(0.9) translate(-10px);
+}
+
+.carousel__slide--prev>.carousel__item {
+  transform: scale(0.9) translate(10px);
+}
+
+.carousel__slide--active>.carousel__item {
+  transform: scale(1.1);
+}
+
+.carousel__prev--in-active,
+.carousel__next--in-active {
+  opacity: 0.3;
+}
+
+.swal2-popup {
+  width: 22em !important;
+}
+
+/* .custom-div .carousel__prev,
+.custom-div .carousel__next {
+  top: 25% !important;
+} */
+.ads-counter {
+  padding: 15px 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+.ads-counter h1 {
+  font-size: 14px;
+  font-weight: normal;
+  color: #808080;
+}
+.pagination {
+  margin: 30px 0 50px 0;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+}
+
+.page-item .page-link {
+  padding: 10px 15px;
+  border: 1px solid #eee;
+  margin: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.disabled .page-link {
+  color: #eee !important;
+}
+
+.active .page-link {
+  background-color: #07abd3;
+  color: #fff !important;
+}
+.carousel__slide .card-container{
+  margin-right: 0!important;
+}
+.explert-carousel {
+  padding: 40px 0 40px 0px;
+}
+
+.card-property .card-list {
+  justify-content: flex-start !important;
+}
+
+.card-property .card-container {
+  margin-right: 20px;
+}
+
+/* .explert-carousel, .explert-carousel .carousel__track{
+  height: 315px;
+} */
+/* .expendSlider .carousel__track{
+  height: 347px;
+  animation-name: example;
+  animation-duration: .4s;
+} */
+/* @keyframes example {
+  from {height: 300px;;}
+  to {height: 347px}
+} */
+@media (max-width: 479px) and (min-width: 320px) {
+  .page-item .page-link {
+    padding: 5px 8px;
+    border: 1px solid #eee;
+    margin: 5px;
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .pagination {
+    width: 100%;
+  }
+
+  .content-container {
+    margin: 40px 10px 50px 10px;
+  }
+
+  .carousel__prev {
+    display: none;
+  }
+
+  .carousel__next {
+    display: none;
+  }
+
+  .main-title h1 {
+    font-size: 18px;
+  }
+
+  label {
+    font-size: 12px !important;
+  }
+
+  .contentheader {
+    padding: 20px 15px !important;
+    margin: 0 10px;
+  }
+
+  .add-property {
+    padding-left: 13px !important;
+  }
+}
+
+/* common css */
