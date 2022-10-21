@@ -267,6 +267,50 @@
         <img v-lazy="require(`../../assets/wasimsiyal.png`)" />
       </a>
     </div>
+    <div
+      class="agent-details"
+      v-else-if="$route.params.agent == 'mohsinmalik'"
+    >
+      <ul class="details-list">
+        <li>
+          <div>Agent Name</div>
+          <div>Mohsin Malik</div>
+        </li>
+        <li>
+          <div>Agent Phone Number</div>
+          <div>0322-4054465</div>
+        </li>
+        <li>
+          <div>Email for properties</div>
+          <div>Al.nasrrealestate1@gmail.com</div>
+        </li>
+   
+        <li>
+          <div>Estate Name</div>
+          <div>Al-Nasr Real Estate & Marketing</div>
+        </li>
+        <li>
+          <div>City</div>
+          <div>Lahore</div>
+        </li>
+        <li>
+          <div>Area expertise</div>
+          <div>DHA, Askari housing scheme, Bahria town & Gawadar land</div>
+        </li>
+        <li>
+          <div>Office Timing</div>
+          <div>10AM to 8PM</div>
+        </li>
+        <li>
+          <div>Full Address</div>
+          <div>Office # 13-14, 2nd Floor Rehman Center, Gate # 3 Askari 11 Lahore</div>
+        </li>
+      </ul>
+      <a href="#" class="agent-image">
+        <!-- <img src="../../assets/MuhammadAsif.png" /> -->
+        <img v-lazy="require(`../../assets/MohsinMalik.png`)" />
+      </a>
+    </div>
   </div>
 </template>
 

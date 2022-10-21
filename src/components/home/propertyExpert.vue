@@ -179,6 +179,12 @@ export default {
         img: "wasimsiyal.png",
         slug:'wasimsiyal',
       },
+      {
+        name: "Mohsin Malik",
+        eState: "Al-Nasr Real Estate & Marketing",
+        img: "MohsinMalik.png",
+        slug:'mohsinmalik',
+      },
     ],
     // carousel settings
     settings: {

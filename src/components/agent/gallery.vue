@@ -204,6 +204,62 @@
         </div>
       </div>
     </div>
+    <div
+      class="container gallery-container"
+      v-if="$route.path == '/mohsinmalik'"
+    >
+      <h1>GALLERY</h1>
+      <div class="gallery-images">
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/mohsinmalik/1.jpeg`)" />
+        </div>
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/mohsinmalik/2.jpeg`)" />
+        </div>
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/mohsinmalik/3.jpeg`)" />
+        </div>
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/mohsinmalik/4.jpeg`)" />
+        </div>
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/mohsinmalik/5.jpeg`)" />
+        </div>
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/mohsinmalik/6.jpeg`)" />
+        </div>
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/mohsinmalik/7.jpeg`)" />
+        </div>
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/mohsinmalik/8.jpeg`)" />
+        </div>
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/mohsinmalik/9.jpeg`)" />
+        </div>
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/mohsinmalik/10.jpeg`)" />
+        </div>
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/mohsinmalik/11.jpeg`)" />
+        </div>
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/mohsinmalik/12.jpeg`)" />
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 

@@ -55,6 +55,12 @@
                 v-if="$route.params.agent == 'wasimsiyal'"
                 >Call</a
               >
+              <a
+                class="call"
+                href="tel:(+92) 0322-4054465"
+                v-if="$route.params.agent == 'mohsinmalik'"
+                >Call</a
+              >
               <a class="whatsapp" href="https://wa.me/" target="_blank"
                 >WhatsApp</a
               >
@@ -107,6 +113,16 @@
             <iframe
               v-else-if="$route.path == '/wasimsiyal'"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3403.365199879614!2d74.40250551462933!3d31.459138657311804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391906201e1c53f3%3A0xc690d81473c36d7a!2sStreet%206%2C%20Sector%20H%20Phase%205%20D.H.A%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1665844314992!5m2!1sen!2s"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <iframe
+              v-else-if="$route.path == '/mohsinmalik'"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3403.2096889977333!2d74.42258365452288!3d31.463417482251124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190954fbb439a1%3A0xb3f75c9ab575d83a!2sAl-Rahman%20Centre!5e0!3m2!1sen!2s!4v1666270500021!5m2!1sen!2s"
               width="600"
               height="450"
               style="border: 0"

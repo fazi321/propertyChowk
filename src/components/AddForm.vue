@@ -638,7 +638,7 @@
           <GoogleMap @latlng="latLng" />
         </div>
         <section class="btn-section">
-          <button class="btn" :disabled="true" style="cursor: no-drop" @click="submit()">
+          <button class="btn" :disabled="loading" @click="submit()">
             {{ !loading ? "Submit" : "Loading..." }}
           </button>
         </section>
@@ -4100,6 +4100,7 @@ export default {
                 showConfirmButton: false,
                 timer: 3000,
               });
+              this.loading = false;
               this.$router.push("/");
             })
             .catch(() => {
