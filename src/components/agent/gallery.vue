@@ -260,6 +260,34 @@
         </div>
       </div>
     </div>
+    <div
+      class="container gallery-container"
+      v-if="$route.path == '/mAmirMalik'"
+    >
+      <h1>GALLERY</h1>
+      <div class="gallery-images">
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/mAmirMalik/1.png`)" />
+        </div>
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/mAmirMalik/2.png`)" />
+        </div>
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/mAmirMalik/3.png`)" />
+        </div>
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/mAmirMalik/4.png`)" />
+        </div>
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/mAmirMalik/5.png`)" />
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 

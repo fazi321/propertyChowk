@@ -82,9 +82,7 @@
       >
         <div :id="`slide-${index}`" class="experts-main">
           <div class="carousel__item">
-            <router-link
-              :to="`${agent.slug ? agent.slug : 'agent'}`"
-            >
+            <router-link :to="`${agent.slug ? agent.slug : 'agent'}`">
               <div class="image-agent">
                 <!-- <img :src="require(`../../assets/${agent.img}`)" v-if="agent.img" /> -->
                 <img
@@ -147,43 +145,49 @@ export default {
         name: "Babar Kalyar",
         eState: "BK Property Marketing",
         img: "Profile.png",
-        slug:'babarkalyar',
+        slug: "babarkalyar",
       },
       {
         name: "Muhammad Asif",
         eState: "Ravian Holding Real Estate",
         img: "MuhammadAsif.png",
-        slug:'muhammadasif',
+        slug: "muhammadasif",
       },
       {
         name: "Malik Asif Jahangir",
         eState: "ESTATE MASTER",
         img: "malikAsif.jpeg",
-        slug:'malikasifjahangir',
+        slug: "malikasifjahangir",
       },
       {
         name: "Mian Talat Ahmad",
         eState: "Talat Estate",
         img: "MianTalatAhmad.jpeg",
-        slug:'miantalatahmad',
+        slug: "miantalatahmad",
       },
       {
         name: "Haider Ayub Baig",
         eState: "L.M Real Estate",
         img: "HaiderAyubBaig.png",
-        slug:'haiderayubbaig',
+        slug: "haiderayubbaig",
       },
       {
         name: "Wasim Siyal",
         eState: "Pioneer Estate",
         img: "wasimsiyal.png",
-        slug:'wasimsiyal',
+        slug: "wasimsiyal",
       },
       {
         name: "Mohsin Malik",
         eState: "Al-Nasr Real Estate & Marketing",
         img: "MohsinMalik.png",
-        slug:'mohsinmalik',
+        slug: "mohsinmalik",
+      },
+      {
+        name: "M. Amir Malik",
+        eState: "New Realtors Estate",
+        img: "M. AmirMalik.png",
+        slug: "mAmirMalik",
       },
     ],
     // carousel settings
@@ -266,8 +270,8 @@ export default {
 </script>
 
 <style scoped>
-.image-agent{
-  min-height:194px;
+.image-agent {
+  min-height: 194px;
 }
 .pagination {
   display: flex;

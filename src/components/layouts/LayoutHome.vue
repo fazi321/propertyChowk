@@ -43,6 +43,11 @@
             <img v-lazy="require(`../../assets/${img}`)" class="active"/>
           </div>
         </div>
+        <div v-else-if="$route.params.agent == 'mAmirMalik'">
+          <div class="slide-imges" v-for="(img, index) in NewRealtorsEstate" :key="index">
+            <img v-lazy="require(`../../assets/${img}`)" class="set-img active"/>
+          </div>
+        </div>
         <div v-else>
           <div class="slide-imges" v-for="(img, index) in images" :key="index">
             <!-- <img
@@ -82,7 +87,8 @@ export default {
       imagesTalatEstate: ["estatebg.png"],
       LMRealEstate: ["lmestate.png"],
       PioneerEstate: ["PioneerEstate.png"],
-      AlNasrRealEstate: ["Al-NasrReal.png"],
+      AlNasrRealEstate: ["Al-NasrReal.jpeg"],
+      NewRealtorsEstate: ["NewRealtorsEstate.png"],
       imageShow: 0,
     };
   },
@@ -143,6 +149,9 @@ export default {
 }
 .mobile-header {
   display: none;
+}
+.slide-imges .set-img{
+  object-fit: initial!important;
 }
 @media (max-width: 479px) and (min-width: 320px) {
   .container-main {

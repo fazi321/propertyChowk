@@ -311,6 +311,50 @@
         <img v-lazy="require(`../../assets/MohsinMalik.png`)" />
       </a>
     </div>
+    <div
+      class="agent-details"
+      v-else-if="$route.params.agent == 'mAmirMalik'"
+    >
+      <ul class="details-list">
+        <li>
+          <div>Agent Name</div>
+          <div>M. Amir Malik</div>
+        </li>
+        <li>
+          <div>Agent Phone Number</div>
+          <div>0324-4051355</div>
+        </li>
+        <li>
+          <div>Email for properties</div>
+          <div>amirmalik30p3@gmail.com</div>
+        </li>
+   
+        <li>
+          <div>Estate Name</div>
+          <div>New Realtors Estate</div>
+        </li>
+        <li>
+          <div>City</div>
+          <div>Lahore</div>
+        </li>
+        <li>
+          <div>Area expertise</div>
+          <div>DHA and Other Top Societies</div>
+        </li>
+        <li>
+          <div>Office Timing</div>
+          <div>10AM to 8PM</div>
+        </li>
+        <li>
+          <div>Full Address</div>
+          <div>Off # 30, 1st Floor Commericial Area. Y block DHA Lahore</div>
+        </li>
+      </ul>
+      <a href="#" class="agent-image">
+        <!-- <img src="../../assets/MuhammadAsif.png" /> -->
+        <img v-lazy="require(`../../assets/M. AmirMalik.png`)" />
+      </a>
+    </div>
   </div>
 </template>
 

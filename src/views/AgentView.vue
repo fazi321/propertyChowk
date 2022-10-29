@@ -179,6 +179,29 @@
           international clients.
         </p>
       </div>
+      <div
+        class="container content-agent"
+        v-if="$route.params.agent == 'mAmirMalik'"
+      >
+        <h1>ABOUT M. Amir Malik</h1>
+        <p>
+          M. Amir Malik is a highly professional real estate professional who
+          has been helping home buyers find and buy a new home or commercial
+          space. He has been working and making sure that the property is
+          adequately marketed so potential buyers can find them! His expertise
+          is in buying and selling houses and commercial plots in DHA Lahore and
+          in various well-known societies. His great competence and work ethic
+          make him one of a kind. His level of experience in real estate makes
+          him one of the best real estate agents in the town. He has been
+          working with leading investors from different areas and Army Persons
+          to provide them with investment consultancy and highly profitable
+          properties.
+        </p>
+        <p>
+          Mr. Amir Malik is one of property chowk’s top 50 agents bringing
+          excellence to the table.
+        </p>
+      </div>
       <!-- social media accounts  -->
       <div
         class="container content-agent"
@@ -648,6 +671,102 @@
           </div>-->
         </div>
       </div>
+      <div
+        class="container content-agent"
+        v-else-if="$route.params.agent == 'mAmirMalik'"
+      >
+        <h1>Follow On Social Media</h1>
+        <div class="social-accounts">
+          <!-- <div>
+            <a
+              href="https://talatestate.com/"
+              target="_blank"
+              class="social-image"
+            >
+              <img class="web" src="../assets/agent/web.png" />
+              <h1 class="title">Website</h1>
+            </a>
+          </div>-->
+          <!-- <div>
+            <a
+              href="https://www.youtube.com/channel/UCE8oyvYAMeOwoNZzQSr4EwQ"
+              target="_blank"
+              class="social-image"
+            >
+              <img src="../assets/agent/youtube.png" />
+              <h1 class="title">Youtube</h1>
+            </a>
+          </div>-->
+          <div>
+            <a
+              href="https://www.facebook.com/PropertyChowkPK/"
+              target="_blank"
+              class="social-image"
+            >
+              <img src="../assets/agent/Facebook.png" />
+              <h1 class="title">Facebook</h1>
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://www.instagram.com/propertychowk/"
+              target="_blank"
+              class="social-image"
+            >
+              <img src="../assets/agent/Instagram.png" />
+              <h1 class="title">Instagram</h1>
+            </a>
+          </div>
+          <!-- <div>
+            <a
+              href="https://www.youtube.com/channel/UCHBJIq6AqcQAn4nM-HoexCA"
+              target="_blank"
+              class="social-image"
+            >
+              <img src="../assets/agent/youtube.png" />
+              <h1 class="title">Youtube</h1>
+            </a>
+          </div> -->
+          <!-- <div>
+            <a href="https://www.facebook.com/haramcityphase2" target="_blank" class="social-image">
+              <img src="../assets/agent/Facebook.png" />
+              <h1 class="title">Facebook</h1>
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://www.instagram.com/haramcityphase2/"
+              target="_blank"
+              class="social-image"
+            >
+              <img src="../assets/agent/Instagram.png" />
+              <h1 class="title">Instagram</h1>
+            </a>
+          </div> -->
+          <!-- <div>
+            <a href="https://www.facebook.com/bkpropertymarketing/" target="_blank" class="social-image">
+              <img src="../assets/agent/Tiktok.png" />
+              <h1 class="title">Tiktok</h1>
+            </a>
+          </div>-->
+          <!-- <div>
+            <a href="https://www.youtube.com/channel/UCiZjVSWZ3IySoSCOXEVw1yQ" target="_blank" class="social-image">
+              <img src="../assets/agent/Whatsapp.png" />
+              <h1 class="title">Whatsapp</h1>
+            </a>
+          </div>-->
+          <!-- <div>
+            <a
+              href="https://twitter.com/EstateMaster2"
+              target="_blank"
+              class="social-image"
+            >
+              <img src="../assets/agent/Twitter.png" />
+              <h1 class="title">Twitter</h1>
+            </a>
+          </div>-->
+        </div>
+      </div>
       <div class="container content-agent" v-else>
         <h1>Follow On Social Media</h1>
         <div class="social-accounts">
@@ -710,6 +829,10 @@
         v-if="$route.path == '/mohsinmalik'"
         :id="'oAFQOPcyiSQ7kK7f10aiAqlfOzL2'"
       />
+      <Reviews
+        v-if="$route.path == '/mAmirMalik'"
+        :id="'xpRD6SQsrxYGgpMudTFGE0iGEiH3'"
+      />
       <Reviews v-if="$route.path == '/miantalatahmad'" :id="'KGVZP'" />
       <!-- <Reviews v-if="$route.path == '/muhammadasif'" :id="'rlFRWr50pKPoU1oSJ5YAmWOV3v93'" /> -->
       <!-- <NewProperty :data="Hot" title="Recent Properties" /> -->
@@ -747,6 +870,13 @@
         :count="mohsinmalik.length"
         :addType="'sup'"
         v-else-if="$route.path == '/mohsinmalik'"
+      />
+      <NewProperty
+        :data="mAmirMalik"
+        title="Featured Properties"
+        :count="mAmirMalik.length"
+        :addType="'sup'"
+        v-else-if="$route.path == '/mAmirMalik'"
       />
       <NewProperty
         :data="superHot"
@@ -842,6 +972,16 @@ export default {
       if (!filteredFeatrued.length) {
         filteredFeatrued = this.$store.state.properties.filter((f) => {
           return f.seller_id == "oAFQOPcyiSQ7kK7f10aiAqlfOzL2"; // && f.city == "Lahore"
+        });
+      }
+      // seller_id rlFRWr50pKPoU1oSJ5YAmWOV3v93
+      return filteredFeatrued;
+    },
+    mAmirMalik() {
+      var filteredFeatrued = "";
+      if (!filteredFeatrued.length) {
+        filteredFeatrued = this.$store.state.properties.filter((f) => {
+          return f.seller_id == "xpRD6SQsrxYGgpMudTFGE0iGEiH3"; // && f.city == "Lahore"
         });
       }
       // seller_id rlFRWr50pKPoU1oSJ5YAmWOV3v93
