@@ -86,6 +86,18 @@ export default {
           img: "wasimsiyal.png",
           slug: "wasimsiyal",
         },
+        {
+          name: "Mohsin Malik",
+          eState: "Al-Nasr Real Estate & Marketing",
+          img: "MohsinMalik.png",
+          slug: "mohsinmalik",
+        },
+        {
+          name: "M. Amir Malik",
+          eState: "New Realtors Estate",
+          img: "M. AmirMalik.png",
+          slug: "mAmirMalik",
+        },
       ],
     };
   },

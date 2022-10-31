@@ -6,11 +6,46 @@
       </div>
       <div class="profile-container">
         <h2>Profile</h2>
-        <div>
-          <img src="../../assets/images/profileimage.png" alt />
-        </div>
+        <section v-if="!edit">
+          <div
+            class="img-container"
+            v-if="info && info.image && !edit"
+            :style="{ backgroundImage: 'url(' + info.image + ')' }"
+          ></div>
+          <div
+            class="img-container"
+            v-else
+            :style="{
+              backgroundImage:
+                'url(' + require('@/assets/images/profileimage.png') + ')',
+            }"
+          ></div>
+        </section>
+        <section v-else>
+          <!-- // change image -->
+          <div
+            class="img-container filechange"
+            :style="
+              !imageChanged
+                ? info.image
+                  ? { backgroundImage: 'url(' + info.image + ')' }
+                  : {
+                      backgroundImage:
+                        'url(' +
+                        require('@/assets/images/profileimage.png') +
+                        ')',
+                    }
+                : { backgroundImage: 'url(' + previewImage + ')' }
+            "
+          >
+            <label>
+              <input type="file" @change="handleChange" size="60" />
+              <img class="camera" src="@/assets/images/camerablue.png">
+            </label>
+          </div>
+        </section>
       </div>
-      <div class="edit-btn">
+      <div class="edit-btn" v-if="!edit">
         <button @click="editProfile">Edit</button>
       </div>
       <div class="profile-list">
@@ -69,7 +104,9 @@
           </li>
         </ul>
         <div class="update-btn" v-if="edit">
-          <button @click="updateProfile">Update</button>
+          <button @click="submit" :disabled="loading">
+            {{ !loading ? "Update" : "Loading..." }}
+          </button>
         </div>
         <div class="premium">
           <h2>Premium Ads</h2>
@@ -89,11 +126,17 @@
 <script>
 import firebase from "../../firebase";
 const db = firebase.firestore();
+const ref = firebase.storage();
 export default {
   data() {
     return {
+      loading : false,
+      imageChanged: false,
       edit: false,
       editValue: {},
+      previewImage: "",
+      //
+      updateImage: "",
     };
   },
   computed: {
@@ -102,6 +145,17 @@ export default {
     },
   },
   methods: {
+    handleChange(e) {
+      var img = e.target.files[0];
+      this.updateImage = img;
+      this.imageChanged = true;
+      // selected file read
+      var reader = new FileReader();
+      reader.onload = (e) => {
+        this.previewImage = e.target.result;
+      };
+      reader.readAsDataURL(img);
+    },
     closeSlide() {
       this.$parent.profileOpen = false;
     },
@@ -115,7 +169,41 @@ export default {
         estate_name,
       };
     },
+    submit() {
+      this.loading = true;
+      if (this.updateImage) {
+        const refTask = ref
+          .ref(`${this.updateImage.name}`)
+          .put(this.updateImage);
+        refTask.on(
+          `state-change`,
+          (snapshot) => {
+            const progress = Math.round(
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+            );
+            this.progress = progress;
+          },
+          (error) => {
+            console.log(error);
+            this.loading = false;
+          },
+          async () => {
+            try {
+              await refTask.snapshot.ref.getDownloadURL().then((url) => {
+                this.editValue.image = url;
+                this.updateProfile();
+              });
+            } catch (error) {
+              this.loading = false;
+            }
+          }
+        );
+      } else {
+        this.updateProfile();
+      }
+    },
     updateProfile() {
+      this.loading = true;
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           db.collection("users")
@@ -129,6 +217,7 @@ export default {
                 showConfirmButton: false,
                 timer: 3000,
               });
+
               db.collection("users")
                 .doc(user.uid)
                 .get()
@@ -136,6 +225,7 @@ export default {
                   this.$store.dispatch("userDetail", querySnapshot.data());
                 });
               this.$store.dispatch("setUser", true);
+              this.loading = false;
             });
         }
       });
@@ -157,6 +247,28 @@ export default {
 </script>
 
 <style scoped>
+/* // file change */
+.filechange label {
+  padding: 10px;
+  display: table;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+.filechange label .camera{
+  width: 25px!important;
+  height:25px!important;
+  position:absolute;
+  bottom:0;
+  right:0;
+}
+.filechange {
+  cursor: pointer;
+  position:relative;
+}
+.filechange input[type="file"] {
+  display: none;
+}
 .premium h2 {
   font-size: 16px;
   color: #333;
@@ -198,11 +310,17 @@ export default {
   min-height: 100px;
   position: relative;
 }
+.profile-container section {
+  display: flex;
+  justify-content: center;
+}
 .profile-container h2 {
   font-size: 16px;
   color: #333;
 }
-.profile-container > div {
+.profile-container .img-container {
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100px;
   height: 100px;
   position: absolute;
@@ -213,10 +331,12 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fcfcfc;
+  /* background: #fcfcfc; */
+  /* overflow: hidden; */
 }
-.profile-container > div img {
-  width: 80px;
+.profile-container .img-container img {
+  width: 100%;
+  height: 100%;
 }
 
 .logout-inner .close-icon {
@@ -323,7 +443,7 @@ export default {
   height: 100%;
 }
 @media (max-width: 479px) and (min-width: 320px) {
-  .logout-inner{
+  .logout-inner {
     width: 100%;
   }
 }

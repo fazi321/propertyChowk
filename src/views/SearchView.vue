@@ -4218,9 +4218,9 @@ export default {
     }else{
       this.category == "buy";
     }
-    if (this.filteredItems.length) {
-      this.scrollToElement();
-    }
+    // if (this.filteredItems.length) {
+    //   this.scrollToElement();
+    // }
     const clickAway = () => {
       this.dropdownCities = false;
     };

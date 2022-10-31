@@ -45,7 +45,10 @@
         <img v-lazy="require(`../../assets/Profile.png`)" />
       </a>
     </div>
-    <div class="agent-details" v-else-if="$route.params.agent == 'miantalatahmad'">
+    <div
+      class="agent-details"
+      v-else-if="$route.params.agent == 'miantalatahmad'"
+    >
       <ul class="details-list">
         <li>
           <div>Agent Name</div>
@@ -71,7 +74,10 @@
         </li>
         <li>
           <div>Area expertise</div>
-          <div>DHA 1# Real Estate Agency with the largest inventory of Luxury Properties and best Investment opportunities in the DHA.</div>
+          <div>
+            DHA 1# Real Estate Agency with the largest inventory of Luxury
+            Properties and best Investment opportunities in the DHA.
+          </div>
         </li>
         <li>
           <div>Office Timing</div>
@@ -104,7 +110,10 @@
           <div>Agent Phone Number</div>
           <div>0300119904</div>
         </li>
-
+        <li>
+          <div>Agent Email Address</div>
+          <div>Masifrealtor@gmail.com</div>
+        </li>
         <li>
           <div>Estate Name</div>
           <div>Ravian Holding Real Estate</div>
@@ -129,7 +138,6 @@
       <a href="#" class="agent-image">
         <!-- <img src="../../assets/MuhammadAsif.png" /> -->
         <img v-lazy="require(`../../assets/MuhammadAsif.png`)" />
-        
       </a>
     </div>
     <div
@@ -150,7 +158,7 @@
           <div>Email for properties</div>
           <div>estatemasterr4@gmail.com</div>
         </li>
-   
+
         <li>
           <div>Estate Name</div>
           <div>ESTATE MASTER</div>
@@ -161,7 +169,10 @@
         </li>
         <li>
           <div>Area expertise</div>
-          <div>INDUSTRY PIONEERS, DHA, MID CITY HOUSING SCHEME, LAHORE SMART CITY, AND ALNOOR ORCHARDS</div>
+          <div>
+            INDUSTRY PIONEERS, DHA, MID CITY HOUSING SCHEME, LAHORE SMART CITY,
+            AND ALNOOR ORCHARDS
+          </div>
         </li>
         <li>
           <div>Office Timing</div>
@@ -169,7 +180,7 @@
         </li>
         <li>
           <div>Full Address</div>
-          <div>34MB  Phase6 DHA Lahore Lahore, Punjab, Pakistan-54000</div>
+          <div>34MB Phase6 DHA Lahore Lahore, Punjab, Pakistan-54000</div>
         </li>
       </ul>
       <a href="#" class="agent-image">
@@ -195,7 +206,7 @@
           <div>Email for properties</div>
           <div>ali_ali8285@yahoo.com</div>
         </li>
-   
+
         <li>
           <div>Estate Name</div>
           <div>L.M Real Estate</div>
@@ -222,10 +233,7 @@
         <img v-lazy="require(`../../assets/HaiderAyubBaig.png`)" />
       </a>
     </div>
-    <div
-      class="agent-details"
-      v-else-if="$route.params.agent == 'wasimsiyal'"
-    >
+    <div class="agent-details" v-else-if="$route.params.agent == 'wasimsiyal'">
       <ul class="details-list">
         <li>
           <div>Agent Name</div>
@@ -240,7 +248,7 @@
           <div>Email for properties</div>
           <div>pioneerestate240@gmail.com</div>
         </li>
-   
+
         <li>
           <div>Estate Name</div>
           <div>Pioneer Estate</div>
@@ -251,7 +259,7 @@
         </li>
         <li>
           <div>Area expertise</div>
-          <div>DHA all phases Lahore, DHA Bahawalpur </div>
+          <div>DHA all phases Lahore, DHA Bahawalpur</div>
         </li>
         <li>
           <div>Office Timing</div>
@@ -267,10 +275,7 @@
         <img v-lazy="require(`../../assets/wasimsiyal.png`)" />
       </a>
     </div>
-    <div
-      class="agent-details"
-      v-else-if="$route.params.agent == 'mohsinmalik'"
-    >
+    <div class="agent-details" v-else-if="$route.params.agent == 'mohsinmalik'">
       <ul class="details-list">
         <li>
           <div>Agent Name</div>
@@ -284,7 +289,7 @@
           <div>Email for properties</div>
           <div>Al.nasrrealestate1@gmail.com</div>
         </li>
-   
+
         <li>
           <div>Estate Name</div>
           <div>Al-Nasr Real Estate & Marketing</div>
@@ -303,7 +308,9 @@
         </li>
         <li>
           <div>Full Address</div>
-          <div>Office # 13-14, 2nd Floor Rehman Center, Gate # 3 Askari 11 Lahore</div>
+          <div>
+            Office # 13-14, 2nd Floor Rehman Center, Gate # 3 Askari 11 Lahore
+          </div>
         </li>
       </ul>
       <a href="#" class="agent-image">
@@ -311,10 +318,7 @@
         <img v-lazy="require(`../../assets/MohsinMalik.png`)" />
       </a>
     </div>
-    <div
-      class="agent-details"
-      v-else-if="$route.params.agent == 'mAmirMalik'"
-    >
+    <div class="agent-details" v-else-if="$route.params.agent == 'mAmirMalik'">
       <ul class="details-list">
         <li>
           <div>Agent Name</div>
@@ -328,7 +332,7 @@
           <div>Email for properties</div>
           <div>amirmalik30p3@gmail.com</div>
         </li>
-   
+
         <li>
           <div>Estate Name</div>
           <div>New Realtors Estate</div>
@@ -398,7 +402,7 @@ export default {
 .agent-details .details-list li div:nth-child(2) {
   color: #000 !important;
   font-weight: 400;
-  width:63%;
+  width: 63%;
 }
 
 .agent-image {
@@ -431,7 +435,7 @@ export default {
     min-width: 140px;
   }
   .agent-details .details-list li {
-  font-size: 14px;
-}
+    font-size: 14px;
+  }
 }
 </style>
