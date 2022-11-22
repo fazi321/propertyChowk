@@ -3892,6 +3892,12 @@ export default {
         reader.onload = (e) => {
           this.previewImage.push(e.target.result);
         };
+        // reader.onprogress = function(data) {
+        //     if (data.lengthComputable) {                                            
+        //         var progress = parseInt( ((data.loaded / data.total) * 100), 10 );
+        //         console.log(progress);
+        //     }
+        // }
         reader.readAsDataURL(e.target.files[i]);
       }
     },

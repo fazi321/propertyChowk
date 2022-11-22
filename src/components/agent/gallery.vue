@@ -288,6 +288,22 @@
         </div>
       </div>
     </div>
+    <div
+      class="container gallery-container"
+      v-if="$route.path == '/abdulrazzaq'"
+    >
+      <h1>GALLERY</h1>
+      <div class="gallery-images">
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/abdulrazzaq/p1.png`)" />
+        </div>
+        <div>
+          <!-- <img src="../../assets/agent/gallery-two.png" /> -->
+          <img v-lazy="require(`../../assets/agent/abdulrazzaq/p2.png`)" />
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 

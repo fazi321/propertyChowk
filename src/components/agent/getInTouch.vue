@@ -67,6 +67,12 @@
                 v-if="$route.params.agent == 'mAmirMalik'"
                 >Call</a
               >
+              <a
+                class="call"
+                href="tel:(+92) 0321-4949470"
+                v-if="$route.params.agent == 'abdulrazzaq'"
+                >Call</a
+              >
               <a class="whatsapp" href="https://wa.me/" target="_blank"
                 >WhatsApp</a
               >
@@ -139,6 +145,16 @@
             <iframe
               v-else-if="$route.path == '/mAmirMalik'"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13611.674324965197!2d74.36686017204654!3d31.471425802170636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391906715b3361cf%3A0x1ba7b86dda181a5d!2sSector%20Y%20DHA%20Phase%203%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1666982499217!5m2!1sen!2s"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <iframe
+              v-else-if="$route.path == '/abdulrazzaq'"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.8817985625374!2d74.37445961462973!3d31.47243755665738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190673ff6be145%3A0xca334d617f28e43d!2sPhase%206%2C%2031%20Commercial%20Area%2C%20Sector%20Y%20DHA%20Phase%203%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1669144017642!5m2!1sen!2s"
               width="600"
               height="450"
               style="border: 0"

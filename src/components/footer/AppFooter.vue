@@ -21,7 +21,7 @@
                   <img src="../../assets/images/phone.svg" />
                 </div>
                 <div>
-                  <a class="call" href="tel:(+92) 3244404070">(+92) 3244404070</a>
+                  <a class="call" href="tel:(+92) 3078949292">(+92) 307 8949292</a>
                 </div>
               </li>
               <li>
@@ -40,7 +40,7 @@
                   <img src="../../assets/images/user.png" />
                 </div>
                 <div>
-                  <a class="whatsapp" href="https://wa.me/923244404070" target="_blank">(+92) 3244404070</a>
+                  <a class="whatsapp" href="https://wa.me/923078949292" target="_blank">(+92) 307 8949292</a>
                   <!-- <router-link to="#">(+92) 307 8949292</router-link> -->
                 </div>
               </li>

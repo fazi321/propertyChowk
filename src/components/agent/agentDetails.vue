@@ -359,6 +359,47 @@
         <img v-lazy="require(`../../assets/M. AmirMalik.png`)" />
       </a>
     </div>
+    <div class="agent-details" v-else-if="$route.params.agent == 'abdulrazzaq'">
+      <ul class="details-list">
+        <li>
+          <div>Agent Name</div>
+          <div>Abdul Razzaq</div>
+        </li>
+        <li>
+          <div>Agent Phone Number</div>
+          <div>0321-4949470</div>
+        </li>
+        <li>
+          <div>Email for properties</div>
+          <div>arazzaq476476@gmail.com</div>
+        </li>
+
+        <li>
+          <div>Estate Name</div>
+          <div>Crystal Estate</div>
+        </li>
+        <li>
+          <div>City</div>
+          <div>Lahore</div>
+        </li>
+        <li>
+          <div>Area expertise</div>
+          <div>DHA Lahore & DHA Multan</div>
+        </li>
+        <li>
+          <div>Office Timing</div>
+          <div>10AM to 8PM</div>
+        </li>
+        <li>
+          <div>Full Address</div>
+          <div>31-A Commercial Area Phase 6 DHA Lahore</div>
+        </li>
+      </ul>
+      <a href="#" class="agent-image">
+        <!-- <img src="../../assets/MuhammadAsif.png" /> -->
+        <img v-lazy="require(`../../assets/AbdulRazzaq.png`)" />
+      </a>
+    </div>
   </div>
 </template>
 

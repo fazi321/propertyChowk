@@ -48,6 +48,11 @@
             <img v-lazy="require(`../../assets/${img}`)" class="set-img active"/>
           </div>
         </div>
+        <div v-else-if="$route.params.agent == 'abdulrazzaq'">
+          <div class="slide-imges" v-for="(img, index) in CrystalEstate" :key="index">
+            <img v-lazy="require(`../../assets/${img}`)" class="set-img active"/>
+          </div>
+        </div>
         <div v-else>
           <div class="slide-imges" v-for="(img, index) in images" :key="index">
             <!-- <img
@@ -89,6 +94,7 @@ export default {
       PioneerEstate: ["PioneerEstate.png"],
       AlNasrRealEstate: ["Al-NasrReal.jpeg"],
       NewRealtorsEstate: ["NewRealtorsEstate.png"],
+      CrystalEstate: ["CrystalEstate.png"],
       imageShow: 0,
     };
   },

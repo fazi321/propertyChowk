@@ -189,6 +189,12 @@ export default {
         img: "M. AmirMalik.png",
         slug: "mAmirMalik",
       },
+      {
+        name: "AbdulRazzaq",
+        eState: "Crystal Estate",
+        img: "AbdulRazzaq.png",
+        slug: "abdulrazzaq",
+      },
     ],
     // carousel settings
     settings: {

@@ -202,6 +202,38 @@
           excellence to the table.
         </p>
       </div>
+      <div
+        class="container content-agent"
+        v-if="$route.params.agent == 'abdulrazzaq'"
+      >
+        <h1>ABOUT MR. Abdul Razzaq</h1>
+        <p>
+          MR. Abdul Razzaq has been an active participant in Pakistan’s real
+          estate for the last 20 years. He is passionate about serving his
+          community and corporate clients. He incorporates the principles of
+          diligence, morality, and top-notch client service into all he does.
+          His potential clients include big names from the business sector of
+          Pakistan and especially DHA. He has continued to use his expertise and
+          knowledge to surpass his client's expectations since he is passionate
+          about the expanding trends in Pakistani real estate, particularly the
+          DHA Lahore and Multan.
+        </p>
+        <p>
+          Crystal Estate is a well-organized real estate agency in Lahore and it
+          is run by a team of property professionals. they have been
+          professionally dealing with DHA properties for the last 10 years.
+          Crystal Estate has appointed different sales executives to assuring
+          quality services who have comprehensive knowledge of property buying,
+          selling, and renting rates about their particular phase, block/sector.
+          This strategy helps them in maintaining efficiency in all
+          transactions.
+        </p>
+        <p>
+          Mr. Razzaq is one of Property Chowk’s Top 50 Property Experts in
+          Lahore. He calls himself a Realtor in DHA and guarantees the best
+          possible possibilities for buyers, sellers, and investors all at once.
+        </p>
+      </div>
       <!-- social media accounts  -->
       <div
         class="container content-agent"
@@ -767,6 +799,102 @@
           </div>-->
         </div>
       </div>
+      <div
+        class="container content-agent"
+        v-else-if="$route.params.agent == 'abdulrazzaq'"
+      >
+        <h1>Follow On Social Media</h1>
+        <div class="social-accounts">
+          <div>
+            <a
+              href="http://www.crystalestate.org/"
+              target="_blank"
+              class="social-image"
+            >
+              <img class="web" src="../assets/agent/web.png" />
+              <h1 class="title">Website</h1>
+            </a>
+          </div>
+          <!-- <div>
+            <a
+              href="https://www.youtube.com/channel/UCE8oyvYAMeOwoNZzQSr4EwQ"
+              target="_blank"
+              class="social-image"
+            >
+              <img src="../assets/agent/youtube.png" />
+              <h1 class="title">Youtube</h1>
+            </a>
+          </div>-->
+          <!-- <div>
+            <a
+              href="https://www.facebook.com/PropertyChowkPK/"
+              target="_blank"
+              class="social-image"
+            >
+              <img src="../assets/agent/Facebook.png" />
+              <h1 class="title">Facebook</h1>
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://www.instagram.com/propertychowk/"
+              target="_blank"
+              class="social-image"
+            >
+              <img src="../assets/agent/Instagram.png" />
+              <h1 class="title">Instagram</h1>
+            </a>
+          </div> -->
+          <!-- <div>
+            <a
+              href="https://www.youtube.com/channel/UCHBJIq6AqcQAn4nM-HoexCA"
+              target="_blank"
+              class="social-image"
+            >
+              <img src="../assets/agent/youtube.png" />
+              <h1 class="title">Youtube</h1>
+            </a>
+          </div> -->
+          <!-- <div>
+            <a href="https://www.facebook.com/haramcityphase2" target="_blank" class="social-image">
+              <img src="../assets/agent/Facebook.png" />
+              <h1 class="title">Facebook</h1>
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://www.instagram.com/haramcityphase2/"
+              target="_blank"
+              class="social-image"
+            >
+              <img src="../assets/agent/Instagram.png" />
+              <h1 class="title">Instagram</h1>
+            </a>
+          </div> -->
+          <!-- <div>
+            <a href="https://www.facebook.com/bkpropertymarketing/" target="_blank" class="social-image">
+              <img src="../assets/agent/Tiktok.png" />
+              <h1 class="title">Tiktok</h1>
+            </a>
+          </div>-->
+          <!-- <div>
+            <a href="https://www.youtube.com/channel/UCiZjVSWZ3IySoSCOXEVw1yQ" target="_blank" class="social-image">
+              <img src="../assets/agent/Whatsapp.png" />
+              <h1 class="title">Whatsapp</h1>
+            </a>
+          </div>-->
+          <!-- <div>
+            <a
+              href="https://twitter.com/EstateMaster2"
+              target="_blank"
+              class="social-image"
+            >
+              <img src="../assets/agent/Twitter.png" />
+              <h1 class="title">Twitter</h1>
+            </a>
+          </div>-->
+        </div>
+      </div>
       <div class="container content-agent" v-else>
         <h1>Follow On Social Media</h1>
         <div class="social-accounts">
@@ -833,6 +961,10 @@
         v-if="$route.path == '/mAmirMalik'"
         :id="'xpRD6SQsrxYGgpMudTFGE0iGEiH3'"
       />
+      <Reviews
+        v-if="$route.path == '/abdulrazzaq'"
+        :id="'eOlbmMl8UtahezW7cQNMcgKBobH3'"
+      />
       <Reviews v-if="$route.path == '/miantalatahmad'" :id="'KGVZP'" />
       <!-- <Reviews v-if="$route.path == '/muhammadasif'" :id="'rlFRWr50pKPoU1oSJ5YAmWOV3v93'" /> -->
       <!-- <NewProperty :data="Hot" title="Recent Properties" /> -->
@@ -877,6 +1009,13 @@
         :count="mAmirMalik.length"
         :addType="'sup'"
         v-else-if="$route.path == '/mAmirMalik'"
+      />
+      <NewProperty
+        :data="abdulrazzaq"
+        title="Featured Properties"
+        :count="abdulrazzaq.length"
+        :addType="'sup'"
+        v-else-if="$route.path == '/abdulrazzaq'"
       />
       <NewProperty
         :data="superHot"
@@ -982,6 +1121,16 @@ export default {
       if (!filteredFeatrued.length) {
         filteredFeatrued = this.$store.state.properties.filter((f) => {
           return f.seller_id == "xpRD6SQsrxYGgpMudTFGE0iGEiH3"; // && f.city == "Lahore"
+        });
+      }
+      // seller_id rlFRWr50pKPoU1oSJ5YAmWOV3v93
+      return filteredFeatrued;
+    },
+    abdulrazzaq() {
+      var filteredFeatrued = "";
+      if (!filteredFeatrued.length) {
+        filteredFeatrued = this.$store.state.properties.filter((f) => {
+          return f.seller_id == "eOlbmMl8UtahezW7cQNMcgKBobH3"; // && f.city == "Lahore"
         });
       }
       // seller_id rlFRWr50pKPoU1oSJ5YAmWOV3v93
