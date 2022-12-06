@@ -78,6 +78,7 @@ export default {
     },
   },
   mounted() {
+    this.getStreetAddressFrom()
     this.geolocation();
     // const arr1 = [
     //   { id: 3, date: "2022-08-18T11:29:39.289688" },
@@ -117,6 +118,21 @@ export default {
     // PropertiesDataService.getAll().off("value", this.onDataChange);
   },
   methods: {
+    async getStreetAddressFrom() {
+      try {
+        var { data } = await this.$axios.get(
+          "https://maps.googleapis.com/maps/api/geocode/json?latlng=24.9582,46.7008&key=AIzaSyB0BScCFIxNxzp_Ao7b4iwhaRx5ZnKvGCE"
+        );
+        if (data.error_message) {
+          console.log(data.error_message);
+        } else {
+          // this.address = data.results[0].formatted_address;
+          console.log(data.results[0].formatted_address)
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
+    },
     geolocation: function () {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(this.showPosition);

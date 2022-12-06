@@ -1130,7 +1130,7 @@ export default {
       var filteredFeatrued = "";
       if (!filteredFeatrued.length) {
         filteredFeatrued = this.$store.state.properties.filter((f) => {
-          return f.seller_id == "eOlbmMl8UtahezW7cQNMcgKBobH3"; // && f.city == "Lahore"
+          return f.seller_id == "eOlbmMl8UtahezW7cQNMcgKBobH3git"; // && f.city == "Lahore"
         });
       }
       // seller_id rlFRWr50pKPoU1oSJ5YAmWOV3v93
